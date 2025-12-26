@@ -1,0 +1,58 @@
+#root {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  /* text-align: center; */
+}
+ 
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+}
+ 
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.subtitle {
+  margin-bottom: 16px;
+  color: #555;
+}
+
+button {
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.joke-box {
+  text-align: center;
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.setup {
+  font-weight: bold;
+}
+
+.punchline {
+  margin-top: 8px;
+  color: #007bff;
+}
