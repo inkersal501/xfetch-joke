@@ -43,7 +43,7 @@ export default function App() {
           onClick={fetchJoke}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Fetch joke"}
+          {loading ? "Fetching..." : "Fetch joke"}
         </button>
 
         {error && (
@@ -56,7 +56,7 @@ export default function App() {
               className="retry"
               onClick={fetchJoke}
             >
-              Try Again
+              Try again
             </button>
           </>
         )}
