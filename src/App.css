@@ -56,3 +56,11 @@ button {
   margin-top: 8px;
   color: #007bff;
 }
+
+.retry {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}

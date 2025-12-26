@@ -12,15 +12,17 @@ export default function App() {
     setJoke(null);
 
     try {
-      const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+      const response = await fetch(
+        "https://official-joke-api.appspot.com/random_joke"
+      );
 
       if (!response.ok) {
-        throw new Error("Failed to fetch joke");
+        throw new Error("Failed");
       }
 
       const data = await response.json();
       setJoke(data);
-    } catch (err) {
+    } catch {
       setError("Could not fetch a joke. Try again.");
     } finally {
       setLoading(false);
@@ -30,20 +32,37 @@ export default function App() {
   return (
     <div className="container">
       <div className="card">
-        <h2>Random Joke</h2>
+        <h2 data-testid="heading">Random Joke</h2>
 
         <p className="subtitle">
           Click the button to fetch a fresh joke
         </p>
 
-        <button onClick={fetchJoke} disabled={loading}>
+        <button
+          data-testid="fetch-button"
+          onClick={fetchJoke}
+          disabled={loading}
+        >
           {loading ? "Loading..." : "Fetch Joke"}
         </button>
 
-        {error && <p className="error">{error}</p>}
+        {error && (
+          <>
+            <p data-testid="error" className="error">
+              {error}
+            </p>
+            <button
+              data-testid="retry-button"
+              className="retry"
+              onClick={fetchJoke}
+            >
+              Try Again
+            </button>
+          </>
+        )}
 
         {joke && (
-          <div className="joke-box">
+          <div data-testid="joke" className="joke-box">
             <p className="setup">{joke.setup}</p>
             <p className="punchline">{joke.punchline}</p>
           </div>
