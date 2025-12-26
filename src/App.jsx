@@ -32,10 +32,10 @@ export default function App() {
   return (
     <div className="container">
       <div className="card">
-        <h2 data-testid="heading">Random Joke</h2>
+        <h1 data-testid="heading">Random Joke</h1>
 
         <p className="subtitle">
-          Click the button to fetch a fresh joke
+          Click the button to fetch a fresh one.
         </p>
 
         <button
@@ -43,7 +43,7 @@ export default function App() {
           onClick={fetchJoke}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Fetch Joke"}
+          {loading ? "Loading..." : "Fetch joke"}
         </button>
 
         {error && (
